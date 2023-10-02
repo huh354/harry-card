@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="Put your description here.">
+  <base href="/">
+
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #fdfdfd;
+    }
+  </style>
+  <title>harry-card</title>
+</head>
+
+<body>
+  <button id="btn">Color</button>
+<script>
+  document.querySelector('#btn').addEventListener('click', function(e) {
+    const link = document.querySelector('a');
+    if (link.classList.contains('color')) {
+      link.classList.remove('color');    
+    }
+    else {
+      link.classList.add('color');      
+    }
+  });
+</script>
+  <button id="btn">Dupelicate</button>
+  <harry-card></harry-card>
+
+  <script type="module" src="./src/harry-card.js"></script>
+  <script>  
+  document.querySelector('#btn').addEventListener('click', function(e) {
+    const clone = document.querySelector('.wrapper').cloneNode(true);
+    document.body.appendChild(clone);});
+    </script>
+</body>
+
+</html>
